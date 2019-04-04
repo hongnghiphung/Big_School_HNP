@@ -21,6 +21,7 @@ namespace Big_School_HNP.ViewModels
         [Required]
         [ValidTime]
         public string Time { get; set; }
+
         [Required]
         public byte Category { get; set; }
         public IEnumerable<Category> Categories { get; set; }
@@ -31,7 +32,7 @@ namespace Big_School_HNP.ViewModels
         }
         public DateTime GetDateTime()
         {
-            return DateTime.Parse(string.Format("{0}{1}", Date, Time));
+            return DateTime.Parse(string.Format("{0} {1}", Date, Time));
         }
     }
 }
