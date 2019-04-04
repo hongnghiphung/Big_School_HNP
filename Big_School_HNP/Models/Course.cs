@@ -11,7 +11,7 @@ namespace Big_School_HNP.Models
         public int Id { get; set; }
         public ApplicationUser Lecturer { get; set; }
         [Required]
-        public string LecturedId { get; set; }
+        public string LecturerId { get; set; }
         [Required]
         [StringLength(255)]
         public string Place { get; set; }
