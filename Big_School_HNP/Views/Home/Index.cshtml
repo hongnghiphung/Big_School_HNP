@@ -4,6 +4,7 @@
 @{
     ViewBag.Title = "Home Page";
 }
+
 <ul class="course">
     @foreach (var course in Model.UpcomingCourses)
     {
@@ -39,9 +40,10 @@
                         }
                         else
                         {
-                            <span class="text-danger">Bạn đã tham gia khóa học</span>
+                            <span class="text-danger">Bạn đã tham gia</span>
                         }
                     </div>
+
                 }
             </div>
         </li>
