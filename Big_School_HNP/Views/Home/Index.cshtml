@@ -1,9 +1,9 @@
 ﻿@model Big_School_HNP.ViewModels.CoursesViewModel
+@using Big_School_HNP.Models;
+@using Microsoft.AspNet.Identity;
 @{
     ViewBag.Title = "Home Page";
 }
-<hr />
-<h2>ATTENDING</h2>
 <ul class="course">
     @foreach (var course in Model.UpcomingCourses)
     {
@@ -29,7 +29,19 @@
                 </span>
                 @if (Model.ShowAction)
                 {
-                    <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                    var User_Id = @User.Identity.GetUserId();
+                    ApplicationDbContext _dbContext = new ApplicationDbContext();
+                    bool isGoing = _dbContext.Attendances.Any(a => a.CourseId == course.Id && a.AttendeeId == User_Id);
+                    <div>
+                        @if (!isGoing)
+                        {
+                            <button data-course-id="@course.Id" class="btn btn-default btn-sm js-toggle-attendance">Going?</button>
+                        }
+                        else
+                        {
+                            <span class="text-danger">Bạn đã tham gia khóa học</span>
+                        }
+                    </div>
                 }
             </div>
         </li>
