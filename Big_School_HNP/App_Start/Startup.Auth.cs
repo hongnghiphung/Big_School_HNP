@@ -54,9 +54,9 @@ namespace Big_School_HNP
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "361909207793115",
+               appSecret: "a6e8fa2bab311085275b249d555e830e");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
